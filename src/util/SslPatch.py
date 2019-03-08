@@ -32,6 +32,8 @@ def getLibraryPath():
         except Exception, err:
             logging.debug("OpenSSL lib not found in: %s (%s)" % (lib_dir, err))
 
+    logging.debug("OI DINGUS: %s" % (os.environ))
+
     if "LD_LIBRARY_PATH" in os.environ:
         lib_dir_paths = os.environ["LD_LIBRARY_PATH"].split(":")
         for path in lib_dir_paths:
